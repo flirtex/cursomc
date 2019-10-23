@@ -1,5 +1,6 @@
 package com.flirtex.cursomc.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +11,7 @@ import com.flirtex.cursomc.repositories.CategoriaRepository;
 import com.flirtex.cursomc.services.exceptions.ObjectNotFoundExcepetion;
 
 @Service
-public class CategoriaService {
+public class CategoriaService  {
 
 	@Autowired
 	private CategoriaRepository repo;
@@ -19,5 +20,6 @@ public class CategoriaService {
 		Optional<Categoria> obj = repo.findById(id);
 		return obj.orElseThrow(() -> new ObjectNotFoundExcepetion("Objeto não encontrado! Id: " + id + ", Tipo: " + Categoria.class.getName()));
 	}
+	
 	
 }
